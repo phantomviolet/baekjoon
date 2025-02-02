@@ -1,15 +1,12 @@
 a  = [' '] * 5
 for i in range(5):
     a[i] = str(input())
-
-size = []
-for i in range(5):
-    size.append(len(a[i]))
     
-i = 0
-for j in range(len(a[i])):
+max_len = max(len(row) for row in a)
+for j in range(max_len):
     for i in range(5):
-        if j > i:
-            print(a[i][j], end = '')
+        if j >= len(a[i]):
+            continue
         else:
-            print('', end = '')
+            print(a[i][j], end='')
+            
